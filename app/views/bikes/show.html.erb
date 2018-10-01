@@ -1,3 +1,5 @@
 <%= @bike.name %>
 <br>
 <%= @bike.description %>
+
+<%= link_to "delete", bike_path(@bike), method: :delete  %>
