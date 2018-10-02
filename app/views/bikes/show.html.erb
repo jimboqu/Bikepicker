@@ -2,6 +2,12 @@
 <br>
 <%= @bike.description %>
 
+<br>
+
+Belongs to: <%= @bike.user.id %>
+
+<br>
+
 <%= link_to "delete", bike_path(@bike), method: :delete  %>
 
 <br>
@@ -13,7 +19,7 @@
 <%= link_to "Bike Index", bikes_path  %>
 
 
-	
+
 
 
 <% if user_signed_in? %>

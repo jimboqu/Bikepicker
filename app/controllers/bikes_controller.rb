@@ -8,11 +8,11 @@ class BikesController < ApplicationController
 
   def new
   	@bike = Bike.new
-    @bike = current_user.build.bikes
+    @bike = current_user.bikes.build
   end
 
   def create
-    @bike = Bike.new(bike_params)
+    @bike = current_user.bikes.build(bike_params)
 
     if @bike.save
       redirect_to @bike
@@ -52,7 +52,7 @@ class BikesController < ApplicationController
     end
 
     def bike_params
-      params.require(:bike).permit(:name, :description)
+      params.require(:bike).permit(:name, :description, :user_id)
     end
 
 end
