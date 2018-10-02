@@ -3,3 +3,19 @@
 <%= @bike.description %>
 
 <%= link_to "delete", bike_path(@bike), method: :delete  %>
+
+<br>
+
+<%= link_to "Edit bike", edit_bike_path(@bike)  %>
+
+<br>
+
+<%= link_to "Bike Index", bikes_path  %>
+
+
+	
+
+
+<% if user_signed_in? %>
+  <%= link_to "New bike", new_bike_path %>
+<% end %>

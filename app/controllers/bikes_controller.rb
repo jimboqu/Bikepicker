@@ -8,6 +8,7 @@ class BikesController < ApplicationController
 
   def new
   	@bike = Bike.new
+    @bike = current_user.build.bikes
   end
 
   def create
