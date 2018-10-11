@@ -1,0 +1,12 @@
+<h1>
+	Frames
+</h1>
+
+<%= @bike.name %>
+
+
+<% @frames.each do |frame| %>
+
+  <p>Name: <%= frame.name %>, Manufacturer: <%= frame.manufacturer %>, Weight: <%= frame.weight %>, Price: <%= frame.price %></p>
+
+<% end %>	

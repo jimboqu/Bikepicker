@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'frames/index'
+  get 'user_bikes/index'
   devise_for :users
   root 'bikes#index'
   resources :bikes

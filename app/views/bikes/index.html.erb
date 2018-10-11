@@ -1,9 +1,7 @@
 <h1>Bikes</h1>
-<% @bikes.each do |bike| %>
-<%= bike.name %> <%= bike.description %> <%= link_to "View", bike_path(bike)  %>
+	<% @bikes.each do |bike| %>
+		<%= bike.name %> <%= bike.description %> <%= link_to "View", bike_path(bike)  %>
+	<% end %>
 <br>
-<% end %>
+<%= sign_in %>
 
-<% if user_signed_in? %>
-<%= link_to "Add bike", new_bike_path %>
-<% end %>
