@@ -45,6 +45,13 @@ class BikesController < ApplicationController
     end
   end
 
+  def addframe
+    @frame = Frame.find(params[:frame_id])
+    @bike = Bike.find(params[:bike_id])
+    
+    redirect_to @bike
+  end
+
   private 
 
     def get_bike
