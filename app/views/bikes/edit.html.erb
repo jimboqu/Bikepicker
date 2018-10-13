@@ -1,3 +1,12 @@
 Edit 
 
-<%= render 'form' %>
+
+
+<%= simple_form_for @bike do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, size: "60x12" %>
+  <%= f.input :frame_id, collection: Frame.all %>
+  <%= f.input :wheel_id, collection: Wheel.all %>
+  <%= f.button :submit %>
+<% end %>
+

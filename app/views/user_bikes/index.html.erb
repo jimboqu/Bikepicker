@@ -1,5 +1,5 @@
 <h1><%= current_user.name %>'s bikes</h1>
 
 <% @bikes.each do |bike| %>
-  <%= bike.name %>
+  <%= link_to bike.name, bike_path(bike) %> 
 <% end %>

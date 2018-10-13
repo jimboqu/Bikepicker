@@ -13,7 +13,6 @@ class BikesController < ApplicationController
 
   def create
     @bike = current_user.bikes.build(bike_params)
-
     if @bike.save
       redirect_to @bike
     else 
@@ -26,12 +25,13 @@ class BikesController < ApplicationController
   end
 
   def edit
-    
+    @frames = Frame.all
   end
 
  def update
     respond_to do |format|
       if @bike.update(bike_params)
+        Bike.weight_total(@bike.frame.weight, @bike.wheel.weight)
         format.html { redirect_to @bike, notice: 'Day was successfully updated.' }
       else
         format.html { render :edit }
@@ -45,13 +45,6 @@ class BikesController < ApplicationController
     end
   end
 
-  def addframe
-    @frame = Frame.find(params[:frame_id])
-    @bike = Bike.find(params[:bike_id])
-    
-    redirect_to @bike
-  end
-
   private 
 
     def get_bike
@@ -59,7 +52,7 @@ class BikesController < ApplicationController
     end
 
     def bike_params
-      params.require(:bike).permit(:name, :description, :user_id)
+      params.require(:bike).permit(:name, :description, :user_id, :frame_id, :wheel_id)
     end
 
 end

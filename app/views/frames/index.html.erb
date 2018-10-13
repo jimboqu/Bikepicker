@@ -2,12 +2,14 @@
 	Frames
 </h1>
 
-<%= @bike.name %>
 
 
 <% @frames.each do |frame| %>
 
   <p>Name: <%= frame.name %>, Manufacturer: <%= frame.manufacturer %>, Weight: <%= frame.weight %>, Price: <%= frame.price %></p>
-  <p><%= link_to "Pick", addframe_path(bike_id: @bike.id, frame_id: frame.id) %></p>
+ 
+ <p>Number of bikes with this frame: <%= frame.bikes.count %></p>
+
+
 
 <% end %>	

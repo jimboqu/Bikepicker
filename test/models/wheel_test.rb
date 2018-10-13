@@ -1,16 +1,22 @@
 # == Schema Information
 #
-# Table name: frames
+# Table name: wheels
 #
 #  id           :integer          not null, primary key
 #  name         :string
 #  manufacturer :string
-#  price        :decimal(8, 2)
+#  string       :string
+#  price        :string
+#  decimal      :string
 #  weight       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 
-class Frame < ApplicationRecord
-  has_many :bikes
+require 'test_helper'
+
+class WheelTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

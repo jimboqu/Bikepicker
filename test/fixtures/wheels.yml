@@ -1,11 +1,13 @@
 # == Schema Information
 #
-# Table name: frames
+# Table name: wheels
 #
 #  id           :integer          not null, primary key
 #  name         :string
 #  manufacturer :string
-#  price        :decimal(8, 2)
+#  string       :string
+#  price        :string
+#  decimal      :string
 #  weight       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
@@ -14,13 +16,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: 
   manufacturer: MyString
-  price: 9.99
+  string,: MyString
+  price: MyString
+  decimal,: MyString
   weight: 1
 
 two:
-  name: MyString
+  name: 
   manufacturer: MyString
-  price: 9.99
+  string,: MyString
+  price: MyString
+  decimal,: MyString
   weight: 1

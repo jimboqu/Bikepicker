@@ -1,0 +1,12 @@
+<h1>Wheels</h1>
+<ul>
+<% @wheels.each do |wheel| %>
+
+  <li><%= wheel.name %></li>
+  <li><%= wheel.manufacturer %></li>
+  <li>£<%= wheel.price %></li>
+  <li><%= wheel.weight %> grams</li>
+  <li><%= wheel.bikes.count %> bikes with these wheels</li>
+  <br>
+<% end %>
+</ul>

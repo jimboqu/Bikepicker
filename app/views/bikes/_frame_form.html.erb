@@ -1,0 +1,5 @@
+<%= form_with model: @bike do |f| %>
+  
+   <%= f.select :frame_id, Frame.all.collect { |p| p.name }, include_blank: true %>
+  <%= f.submit "Create" %>
+<% end %>

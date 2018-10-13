@@ -1,0 +1,15 @@
+<h1>Add frame</h1>
+
+
+<%= @bike.name %>
+
+<br>
+<br>
+
+<% @frames.each do |frame| %>
+	<%= frame.name %>
+	<br>
+	<%= frame.manufacturer %>
+	<br>
+	<br>
+<% end %>

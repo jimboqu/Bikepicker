@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_11_181025) do
+ActiveRecord::Schema.define(version: 2018_10_13_173122) do
 
   create_table "bikes", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_10_11_181025) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "frame_id"
+    t.integer "wheel_id"
+    t.integer "weight"
     t.index ["user_id"], name: "index_bikes_on_user_id"
   end
 
@@ -47,6 +49,17 @@ ActiveRecord::Schema.define(version: 2018_10_11_181025) do
     t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wheels", force: :cascade do |t|
+    t.string "name"
+    t.string "manufacturer"
+    t.string "string"
+    t.string "price"
+    t.string "decimal"
+    t.integer "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
