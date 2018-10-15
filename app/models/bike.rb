@@ -26,8 +26,12 @@ class Bike < ApplicationRecord
   accepts_nested_attributes_for :frame
   accepts_nested_attributes_for :wheel
 
-  def self.weight_total(frame, wheels)
-  	new_weight = frame + wheels
-    update(weight: new_weight)
+  def self.weight_total(bike)
+  	new_weight = bike.frame.weight + bike.wheel.weight
+    bike.update(weight: new_weight)
+  end
+
+  def self.price_total(bike)
+  	new_price = bike.frame.price + bike.wheel.price
   end
 end
