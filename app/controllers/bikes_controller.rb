@@ -14,7 +14,7 @@ class BikesController < ApplicationController
   def create
     @bike = current_user.bikes.build(bike_params)
     if @bike.save
-      redirect_to @bike
+      redirect_to @bike, notice: 'The bike was successfully updated.'
     else 
       render 'new'
     end
@@ -32,7 +32,7 @@ class BikesController < ApplicationController
     respond_to do |format|
       if @bike.update(bike_params)
         Bike.weight_total(@bike.frame.weight, @bike.wheel.weight)
-        format.html { redirect_to @bike, notice: 'Day was successfully updated.' }
+        format.html { redirect_to @bike, notice: 'The bike was successfully updated.' }
       else
         format.html { render :edit }
       end
