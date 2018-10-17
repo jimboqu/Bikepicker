@@ -1,34 +1,38 @@
-Name <%= @bike.name %>
-<br>
-Description <%= @bike.description %>
-<br>
+<h1>Bike: <%= @bike.name %></h1>
 
-Frame <%= frame %>
+<p>Description: <%= @bike.description %>
+<br></p>
 
-Wheels <%= wheels %>
+<h2>Kit list</h2>
+<ul>
+	<li>Frame: <%= frame %></li>
+	<li>Wheels: <%= wheels %></li>
+</ul>
 
-<br>
 
-Belongs to: <%= @bike.user.name.capitalize %>
 
-<br>
 
-<%= link_to "delete", bike_path(@bike), method: :delete  %>
-
-<br>
-
-weight: <%= @bike.weight %>
-
-<%= link_to "Edit bike", edit_bike_path(@bike)  %>
+<p><%= link_to "Kit index", frames_index_path  %> | <%= link_to "Wheel index", wheels_index_path %></p>
 
 <br>
 
-<%= link_to "Bike Index", bikes_path  %>
+<h2>Details</h2>
+<ul>
+	<li>Belongs to: <%= @bike.user.name.capitalize %></li>
+	<li>Weight: <%= @bike.weight %> grams</li>
+</ul>
 
-<%= link_to "Frame Index", frames_index_path(bike: @bike)  %>
+<br>
+
+<h3>Links</h3>
+
+<p><%= link_to "Delete bike", bike_path(@bike), method: :delete  %> | <%= link_to "Edit bike", edit_bike_path(@bike)  %> | <%= new_bike %> </p>
+
+<%= link_to "My Bikes", user_bikes_index_path  %>
+
+<p><%= link_to "Main Bike index", bikes_path  %></p>
 
 
 
-<% if user_signed_in? %>
-  <%= link_to "New bike", new_bike_path %>
-<% end %>
+
+

@@ -27,13 +27,13 @@ class BikesController < ApplicationController
 
   def edit
     @frames = Frame.all
+    @wheels = Wheel.all
   end
 
  def update
     respond_to do |format|
       if @bike.update(bike_params)
         Bike.weight_total(@bike)
-        Bike.price_total(@bike)
         format.html { redirect_to @bike, notice: 'The bike was successfully updated.' }
       else
         format.html { render :edit }

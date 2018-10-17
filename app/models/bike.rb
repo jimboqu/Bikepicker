@@ -32,6 +32,8 @@ class Bike < ApplicationRecord
   end
 
   def self.price_total(bike)
-  	new_price = bike.frame.price + bike.wheel.price
+    price = bike.wheel.price.to_i
+  	new_price = bike.frame.price + price
+  	bike.update(price: new_price)
   end
 end

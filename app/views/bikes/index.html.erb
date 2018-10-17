@@ -1,7 +1,11 @@
 <h1>Bikes</h1>
+	<ul>
 	<% @bikes.each do |bike| %>
-		<%= bike.name %> <%= bike.description %> <%= link_to "View", bike_path(bike)  %>
+		<li><%= link_to bike.name, bike_path(bike)  %></li>
+		<li>Description: <%= bike.description %> </li>
+		<br>
 	<% end %>
+	</ul>
 <br>
 <%= sign_in %>
 

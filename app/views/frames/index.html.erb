@@ -4,12 +4,19 @@
 
 
 
-<% @frames.each do |frame| %>
 
-  <p>Name: <%= frame.name %>, Manufacturer: <%= frame.manufacturer %>, Weight: <%= frame.weight %>, Price: <%= frame.price %></p>
- 
- <p>Number of bikes with this frame: <%= frame.bikes.count %></p>
-
-
-
-<% end %>	
+<table class="table">
+	<tr>
+		<th>Manufacturer</th>
+		<th>Model</th>
+		<th>Bikes</th>
+	</tr>
+	<% @frames.each do |frame| %>
+	<tr>
+		<td><%= frame.manufacturer %></td>
+		<td><%= frame.name %></td>
+		<td><%= frame.bikes.count %></td>
+	</tr>
+	<% end %>
+	
+</table>

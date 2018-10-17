@@ -21,4 +21,10 @@ module BikeHelper
       "get some wheels"
     end
   end
+
+  def new_bike
+    if user_signed_in? 
+      link_to "New bike", new_bike_path 
+    end
+  end
 end
