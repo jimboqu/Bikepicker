@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   get 'wheels/index'
   get 'frames/index'
   get 'user_bikes/index'
+  get 'components', to: 'pages#components', as: 'components'
   devise_for :users
   root 'bikes#index'
   resources :bikes
