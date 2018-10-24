@@ -45,6 +45,7 @@ group :development, :test do
   gem 'annotate'
   gem 'better_errors'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
