@@ -13,5 +13,5 @@
 
 class Frame < ApplicationRecord
   has_many :bikes
-  
+  ratyrate_rateable "weight", "stiffness", "value"
 end
