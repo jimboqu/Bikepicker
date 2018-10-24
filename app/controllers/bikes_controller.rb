@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-
+  
   before_action :get_bike, only: [:show,:edit,:update, :destroy]
  
   
@@ -8,10 +8,14 @@ class BikesController < ApplicationController
   end
 
   def new
-  	@bike = Bike.new
-    @bike = current_user.bikes.build
+    if !user_signed_in?
+    
+      redirect_to '/users/sign_in'
+    else
+    	@bike = Bike.new
+      @bike = current_user.bikes.build
+    end
   end
-
   def create
     @bike = current_user.bikes.build(bike_params)
     if @bike.save
