@@ -1,24 +1,5 @@
-# README
+# Bikepicker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bikepicker is CRUD app design to allow the user to build bespoke bikes. It allows them to create a basic bike and add a frame, wheels, etc. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The price, weight and various other stats for these components will be added up. Users will have to sign in to be able to create and vote on bikes. 
