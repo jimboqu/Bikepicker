@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   get 'user_bikes/index'
   get 'components', to: 'pages#components', as: 'components'
   devise_for :users
-  root 'bikes#index'
+  root 'pages#home'
   resources :bikes
   get 'user_bikes/addframe', to: 'user_bikes#addframe', as: 'addframe'
 
