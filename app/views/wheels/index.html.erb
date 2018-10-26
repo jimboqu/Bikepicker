@@ -1,16 +1,18 @@
-<h1>Wheels</h1>
-<table class="table">
-	<tr>
-		<th>Manufacturer</th>
-		<th>Model</th>
-		<th>Bikes</th>
-	</tr>
-	<% @wheels.each do |wheel| %>
-	<tr>
-		<td><%= wheel.manufacturer %></td>
-		<td><%= wheel.name %></td>
-		<td><%= wheel.bikes.count %></td>
-	</tr>
-	<% end %>
-	
-</table>
+<div class="container">
+	<h1>Wheels</h1>
+	<table class="table">
+		<tr>
+			<th>Manufacturer</th>
+			<th>Model</th>
+			<th>Bikes</th>
+		</tr>
+		<% @wheels.each do |wheel| %>
+		<tr>
+			<td><%= wheel.manufacturer %></td>
+			<td><%= wheel.name %></td>
+			<td><%= wheel.bikes.count %></td>
+		</tr>
+		<% end %>
+		
+	</table>
+</div>

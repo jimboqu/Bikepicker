@@ -24,7 +24,9 @@ module BikeHelper
 
   def new_bike
     if user_signed_in? 
-      link_to "New bike", new_bike_path 
+      link_to "New bike", new_bike_path , class: "btn btn-info"
     end
   end
+
+
 end
