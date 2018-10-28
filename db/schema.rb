@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_113146) do
+ActiveRecord::Schema.define(version: 2018_10_28_083712) do
 
   create_table "average_caches", force: :cascade do |t|
     t.integer "rater_id"
@@ -32,7 +32,17 @@ ActiveRecord::Schema.define(version: 2018_10_24_113146) do
     t.integer "frame_id"
     t.integer "wheel_id"
     t.integer "weight"
+    t.integer "chainset_id"
     t.index ["user_id"], name: "index_bikes_on_user_id"
+  end
+
+  create_table "chainsets", force: :cascade do |t|
+    t.string "name"
+    t.string "manufacturer"
+    t.integer "weight", default: 0
+    t.decimal "price", precision: 5, scale: 2, default: "0.0"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "frames", force: :cascade do |t|

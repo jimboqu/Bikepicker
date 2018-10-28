@@ -11,6 +11,7 @@
 #  frame_id    :integer
 #  wheel_id    :integer
 #  weight      :integer
+#  chainset_id :integer
 #
 
 require 'rails_helper'

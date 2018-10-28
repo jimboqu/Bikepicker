@@ -37,7 +37,7 @@ class BikesController < ApplicationController
  def update
     respond_to do |format|
       if @bike.update(bike_params)
-        Bike.weight_total(@bike)
+        Bike.update_total(@bike)
         format.html { redirect_to @bike, notice: 'The bike was successfully updated.' }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class BikesController < ApplicationController
     end
 
     def bike_params
-      params.require(:bike).permit(:name, :description, :user_id, :frame_id, :wheel_id)
+      params.require(:bike).permit(:name, :description, :user_id, :frame_id, :wheel_id, :chainset_id)
     end
 
 

@@ -36,6 +36,7 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
+
   post '/rate' => 'rater#create', :as => 'rate'
   get 'wheels/index'
   resources :frames, except: [:new, :create, :update, :edit, :delete]

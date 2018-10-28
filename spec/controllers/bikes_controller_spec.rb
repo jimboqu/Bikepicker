@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: bikes
+#
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#  frame_id    :integer
+#  wheel_id    :integer
+#  weight      :integer
+#  chainset_id :integer
+#
+
 require 'rails_helper'
 
 RSpec.describe BikesController, type: :controller do

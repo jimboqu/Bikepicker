@@ -11,6 +11,7 @@
 #  frame_id    :integer
 #  wheel_id    :integer
 #  weight      :integer
+#  chainset_id :integer
 #
 
 # Create default value for weight
@@ -23,13 +24,16 @@ class Bike < ApplicationRecord
   belongs_to :user
   belongs_to :frame, optional: true
   belongs_to :wheel, optional: true
+  belongs_to :chainset, optional: true
+
   accepts_nested_attributes_for :frame
   accepts_nested_attributes_for :wheel
+  accepts_nested_attributes_for :chainset
 
   validates_presence_of :name
 
-  def self.weight_total(bike)
-  	new_weight = bike.frame.weight + bike.wheel.weight
+  def self.update_total(bike)
+  	new_weight = bike.frame.weight + bike.wheel.weight + bike.chainset.weight
     bike.update(weight: new_weight)
   end
 
