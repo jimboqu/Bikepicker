@@ -1,0 +1,13 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+
+
+.jumbotron {
+	color: white;
+	text-shadow: 1px 1px 2px black;
+	background-image:url(spesh.jpg);
+ 	background-size: 100% 100%; 
+}

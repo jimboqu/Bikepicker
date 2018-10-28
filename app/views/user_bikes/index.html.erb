@@ -1,24 +1,32 @@
-<h1><%= current_user.name.capitalize %>'s bikes</h1>
-<table class="table">
-	<tr>
-		<th>
-			name
-		</th>
-		<th>
-			Description
-		</th>
-		<th>
-			Weight
-		</th>
-	</tr>
-	<% @bikes.each do |bike| %>
-	<tr>
-		<td><%= link_to bike.name, bike_path(bike) %> </td>
-		<td><%= bike.description %> </td>
-		<td><%= bike.weight %>g</td>
-	</tr>
-	<% end %>
-</table>
+
+
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<h1><%= current_user.name.capitalize %>'s bikes</h1>
+			<table class="table">
+			<tr>
+				<th>
+					name
+				</th>
+				<th>
+					Description
+				</th>
+				<th>
+					Weight
+				</th>
+			</tr>
+			<% @bikes.each do |bike| %>
+			<tr>
+				<td><%= link_to bike.name, bike_path(bike) %> </td>
+				<td><%= bike.description %> </td>
+				<td><%= bike.weight %>g</td>
+			</tr>
+			<% end %>
+			</table>
+		</div>
+	</div>
+
+
 
   
 

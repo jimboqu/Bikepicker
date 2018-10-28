@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   get 'components', to: 'pages#components', as: 'components'
   devise_for :users
   root 'pages#home'
+  get 'about', to: 'pages#about', as: 'about'
   resources :bikes
   get 'user_bikes/addframe', to: 'user_bikes#addframe', as: 'addframe'
 

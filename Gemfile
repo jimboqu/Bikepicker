@@ -46,6 +46,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'launchy'
 end
 
 group :development do
