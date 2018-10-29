@@ -14,6 +14,8 @@ class BikesController < ApplicationController
     else
     	@bike = Bike.new
       @bike = current_user.bikes.build
+      @frames = Frame.all
+      @wheels = Wheel.all
     end
   end
   def create

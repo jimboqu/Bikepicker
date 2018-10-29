@@ -24,7 +24,7 @@ RSpec.describe Bike, type: :model do
 
   it "is valid if it does have a name" do
     user = User.create(name: "James", email: "james@hotmail.com", password: "moorohust")
-    bike = user.bikes.build(name: "bike1", description: "yeah" )
+    bike = FactoryBot.build(:bike, name: "bike1", description: "yeah" )
     expect(bike).to be_valid
   end
 
@@ -45,4 +45,9 @@ RSpec.describe Bike, type: :model do
     bike2 = FactoryBot.build(:bike, name: "jim")
     expect(bike2).to be_valid
   end
-end
+
+  it "is invalid if it does not have wheels " do
+    bike = FactoryBot.build(:bike, frame_id: nil)
+    expect(bike).to be_invalid
+  end
+ end

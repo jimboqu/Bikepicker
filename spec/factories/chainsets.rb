@@ -13,9 +13,9 @@
 
 FactoryBot.define do
   factory :chainset do
-    name { "MyString" }
-    manufacturer { "MyString" }
-    weight { 1 }
-    price { "9.99" }
+    name { "Ring" }
+    manufacturer { "King" }
+    weight { 1300 }
+    price { "100.00" }
   end
 end

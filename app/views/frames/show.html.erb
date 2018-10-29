@@ -1,4 +1,27 @@
 
+<h1><%= @frame.manufacturer %> <%= @frame.name %></h1>
+
+<h3>Facts</h3>
+
+<table class="table">
+	<tr>
+		<th>Weight</th>
+		<th>Price</th>
+		<th>Bikes</th>		
+	</tr>
+	<tr>
+		<td><%= @frame.weight %></td>
+		<td><%= @frame.price %></td>
+		<td><%= @frame.bikes.count %></td>
+		
+	</tr>
+
+
+</table>
+
+<h3>Ratings</h3>
 <div data-turbolinks="false">
 	Weight: <%= rating_for @frame, 'weight' %>
+	Stiffness: <%= rating_for @frame, 'stiffness' %>
+	Value: <%= rating_for @frame, 'value' %>
 </div>

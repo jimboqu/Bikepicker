@@ -7,7 +7,7 @@
 
 		<h2>Components</h2>
 		<ul>
-			<li>Frame: <%= @bike.frame.manufacturer.capitalize %> <%= @bike.frame.name.capitalize %> | <%= @bike.frame.weight %>g</li>
+			<li>Frame: <%= @bike.frame.manufacturer.capitalize %> <%= link_to @bike.frame.name.capitalize, frame_path(@bike.frame) %> | <%= @bike.frame.weight %>g</li>
 			<li>Wheels: <%= @bike.wheel.manufacturer.capitalize %> <%= @bike.wheel.name.capitalize %> | <%= @bike.wheel.weight %>g</li>
 			<li>Chainset: <%= @bike.chainset.manufacturer.capitalize %> <%= @bike.chainset.name.capitalize %> | <%= @bike.chainset.weight %>g</li>
 		</ul>

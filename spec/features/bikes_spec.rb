@@ -26,10 +26,16 @@ RSpec.feature "Bikes", type: :feature do
     fill_in "Password", with: user.password
     click_button "Log in"
 
+
     expect {
       click_link "Make a Bike"
       fill_in "Name", with: "Bike1"
       fill_in "Description", with: "Another bike"
+      
+      select "Alez", from: "Frame", visible: false
+      select "Ultegra", from: "Chainset"
+      select "Zonda", from: "Wheel"
+
       click_button "Create Bike"
     }.to change(user.bikes, :count).by(1)
 

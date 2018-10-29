@@ -1,3 +1,40 @@
-<h1>Bike#new</h1>
+<h1>Create a new bike</h1>
 
-<%= render 'form' %>
+<div class="row">
+	<div class="col-md-6">
+		<h2>Frames</h2>
+		<table class="table">
+			<tr>
+				<th>Manufacturer</th>
+				<th>Model</th>
+				<th>Bikes</th>
+			</tr>
+			<% @frames.each do |frame| %>
+			<tr>
+				<td><%= frame.manufacturer %></td>
+				<td><%= frame.name %></td>
+				<td><%= frame.bikes.count %></td>
+			</tr>
+			<% end %>
+		</table>
+
+		<h2>Wheels</h2>
+		<table class="table">
+			<tr>
+				<th>Manufacturer</th>
+				<th>Model</th>
+				<th>Bikes</th>
+			</tr>
+			<% @wheels.each do |wheel| %>
+			<tr>
+				<td><%= wheel.manufacturer %></td>
+				<td><%= wheel.name %></td>
+				<td><%= wheel.bikes.count %></td>
+			</tr>
+			<% end %>
+		</table>
+	</div>
+	<div class="col-md-6">
+		<%= render 'form' %>
+	</div>
+</div>

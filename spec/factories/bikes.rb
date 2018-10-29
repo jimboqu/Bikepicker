@@ -21,5 +21,6 @@ FactoryBot.define do
     association :frame
     association :wheel
     association :user
+    association :chainset
   end
 end
