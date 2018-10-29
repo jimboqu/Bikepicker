@@ -64,6 +64,4 @@ class BikesController < ApplicationController
       params.require(:bike).permit(:name, :description, :user_id, :frame_id, :wheel_id, :chainset_id)
     end
 
-
-
 end
