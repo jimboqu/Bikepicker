@@ -5,10 +5,11 @@
 		<p>Description: <%= @bike.description %>
 		<br></p>
 
-		<h2>Kit list</h2>
+		<h2>Components</h2>
 		<ul>
-			<li>Frame: <%= frame %></li>
-			<li>Wheels: <%= wheels %></li>
+			<li>Frame: <%= @bike.frame.manufacturer.capitalize %> <%= @bike.frame.name.capitalize %> | <%= @bike.frame.weight %>g</li>
+			<li>Wheels: <%= @bike.wheel.manufacturer.capitalize %> <%= @bike.wheel.name.capitalize %> | <%= @bike.wheel.weight %>g</li>
+			<li>Chainset: <%= @bike.chainset.manufacturer.capitalize %> <%= @bike.chainset.name.capitalize %> | <%= @bike.chainset.weight %>g</li>
 		</ul>
 	</div>
 	<div class="col-md-6">

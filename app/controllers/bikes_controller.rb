@@ -19,6 +19,7 @@ class BikesController < ApplicationController
   def create
     @bike = current_user.bikes.build(bike_params)
     if @bike.save
+      Bike.update_total(@bike)
       redirect_to @bike, notice: 'The bike was successfully updated.'
     else 
       render 'new'

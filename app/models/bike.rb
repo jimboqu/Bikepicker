@@ -14,7 +14,7 @@
 #  chainset_id :integer
 #
 
-# Create default value for weight
+# Create default 0 for weight
 # Create attribute for price
 
 
@@ -31,15 +31,13 @@ class Bike < ApplicationRecord
   accepts_nested_attributes_for :chainset
 
   validates_presence_of :name
+  validates_presence_of :wheel
+  validates_presence_of :chainset
+  validates_presence_of :frame
 
   def self.update_total(bike)
   	new_weight = bike.frame.weight + bike.wheel.weight + bike.chainset.weight
     bike.update(weight: new_weight)
   end
 
-  def self.price_total(bike)
-    price = bike.wheel.price.to_i
-  	new_price = bike.frame.price + price
-  	bike.update(price: new_price)
-  end
 end
