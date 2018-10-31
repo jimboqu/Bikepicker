@@ -1,4 +1,4 @@
-<%= render 'jumbotron' %>
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 offset-md-1">
@@ -15,12 +15,15 @@
 		<th>
 			Owner
 		</th>
+		<th>Rating
+		</th>
 		<% @bikes.each do |bike| %>
 		<tr>
 			<td><%= link_to bike.name, bike_path(bike)  %></td>
 			<td><%= bike.description %>	</td>
 			<td><%= bike.weight %></td>
 			<td><%= bike.user.name %></td>
+			<td><%= rating_for bike, 'overall' %></td>
 		</tr>
 		<% end %>
 	</table>

@@ -1,6 +1,6 @@
 class BikesController < ApplicationController
   
-  before_action :get_bike, only: [:show,:edit,:update, :destroy]
+  before_action :get_bike, only: [:edit,:update, :destroy]
  
   
   def index
@@ -29,7 +29,7 @@ class BikesController < ApplicationController
   end
 
   def show
-
+    @bike = Bike.find(params[:id])
   end
 
   def edit

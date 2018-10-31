@@ -37,6 +37,7 @@
 
 Rails.application.routes.draw do
 
+  resources :chainsets, except: [:edit, :delete, :update, :new, :create]
   post '/rate' => 'rater#create', :as => 'rate'
   get 'wheels/index'
   resources :frames, except: [:new, :create, :update, :edit, :delete]

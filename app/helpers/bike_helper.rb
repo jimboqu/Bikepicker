@@ -28,5 +28,16 @@ module BikeHelper
     end
   end
 
+  def edit_bike
+    if user_signed_in? 
+      link_to "Edit", edit_bike_path(@bike) , class: "btn btn-info"
+    end
+  end
+
+  def delete_bike
+    if user_signed_in? 
+      link_to "Delete", bike_path(@bike), method: :delete, class: "btn btn-info"
+    end
+  end
 
 end

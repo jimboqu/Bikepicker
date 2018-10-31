@@ -35,6 +35,8 @@ class Bike < ApplicationRecord
   validates_presence_of :chainset
   validates_presence_of :frame
 
+  ratyrate_rateable "overall"
+
   def self.update_total(bike)
   	new_weight = bike.frame.weight + bike.wheel.weight + bike.chainset.weight
     bike.update(weight: new_weight)

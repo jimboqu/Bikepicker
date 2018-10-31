@@ -46,6 +46,11 @@ RSpec.describe BikesController, type: :controller do
       expect(response).to redirect_to root_path
     end
 
+    it "allows an unsigned in user to view a bike" do
+      bike = FactoryBot.create(:bike)
+      get :show, params: {id: bike.id}
+      expect(response).to be_success
+    end
     
   end
 end

@@ -8,15 +8,9 @@ RSpec.feature "Pages", type: :feature do
     click_link "Sign in"
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password 
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password 
     click_button "Log in"
     click_link "Make a Bike"
-    expect(page).to have_text "Bike#new"
-    
-    
-    
-    
+    expect(page).to have_text "Bike"
   end
 
   scenario "new user sees registration" do

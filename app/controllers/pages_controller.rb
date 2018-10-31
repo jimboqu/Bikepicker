@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
   def home 
     @page_title = "Bikepicker"
-    @page_text = "Bikepicker allows you to create different bikes, add up the weight and price. Compare and rate."
+    @page_text = "Bikepicker allows you to create different bikes add up the weight and price."
   end
 
   def about 

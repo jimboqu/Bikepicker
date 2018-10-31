@@ -1,6 +1,26 @@
-<h1>
-	Frames
-</h1>
+<div class="container">
+	
+	<h1>
+		Frames
+	</h1>
+	<table class="table">
+		<tr>
+			<th>Manufacturer</th>
+			<th>Model</th>
+			<th>Bikes</th>
+		</tr>
+		<% @frames.each do |frame| %>
+		<tr>
+			<td><%= frame.manufacturer %></td>
+			<td><%= link_to frame.name, frame_path(frame) %></td>
+			<td><%= frame.bikes.count %></td>
+		</tr>
+		<% end %>
+		
+	</table>
+	
+</div>
+
 
 
 

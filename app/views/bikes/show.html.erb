@@ -4,7 +4,7 @@
 	<div class="col-md-6">
 		<p>Description: <%= @bike.description %>
 		<br></p>
-
+        <p><%= rating_for @bike, 'overall' %></p>
 		<h2>Components</h2>
 		<ul>
 			<li>Frame: <%= @bike.frame.manufacturer.capitalize %> <%= link_to @bike.frame.name.capitalize, frame_path(@bike.frame) %> | <%= @bike.frame.weight %>g</li>
@@ -27,8 +27,8 @@
 		<br>
 
 		<h3>Links</h3>
-
-		<p><%= link_to "Delete bike", bike_path(@bike), method: :delete  %> | <%= link_to "Edit bike", edit_bike_path(@bike)  %> | <%= new_bike %> </p>
+       
+		<p> <%= delete_bike %> | <%= edit_bike %> | <%= new_bike %> </p>
 
 		<%= link_to "My Bikes", user_bikes_index_path  %>
 

@@ -1,0 +1,26 @@
+<div class="container">
+	
+	<h1>
+		Chainsets
+	</h1>
+	<table class="table">
+		<tr>
+			<th>Manufacturer</th>
+			<th>Model</th>
+			<th>Bikes</th>
+		</tr>
+		<% @chainsets.each do |chainset| %>
+		<tr>
+			<td><%= chainset.manufacturer %></td>
+			<td><%= link_to chainset.name, chainset_path(chainset.id) %></td>
+			<td><%= chainset.bikes.count %></td>
+		</tr>
+		<% end %>
+		
+	</table>
+
+</div>
+
+
+
+
