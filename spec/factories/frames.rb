@@ -2,7 +2,7 @@
 #
 # Table name: frames
 #
-#  id           :integer          not null, primary key
+#  id           :bigint(8)        not null, primary key
 #  name         :string
 #  manufacturer :string
 #  price        :decimal(8, 2)

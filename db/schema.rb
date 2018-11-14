@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_083712) do
+ActiveRecord::Schema.define(version: 2018_11_14_162459) do
 
-  create_table "average_caches", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "average_caches", id: :serial, force: :cascade do |t|
     t.integer "rater_id"
     t.string "rateable_type"
     t.integer "rateable_id"
@@ -28,12 +31,23 @@ ActiveRecord::Schema.define(version: 2018_10_28_083712) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.integer "frame_id"
     t.integer "wheel_id"
     t.integer "weight"
     t.integer "chainset_id"
+    t.bigint "brake_id"
+    t.index ["brake_id"], name: "index_bikes_on_brake_id"
     t.index ["user_id"], name: "index_bikes_on_user_id"
+  end
+
+  create_table "brakes", force: :cascade do |t|
+    t.string "manufacturer"
+    t.string "name"
+    t.decimal "price", default: "0.0"
+    t.integer "weight", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "chainsets", force: :cascade do |t|
@@ -54,7 +68,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_083712) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "overall_averages", force: :cascade do |t|
+  create_table "overall_averages", id: :serial, force: :cascade do |t|
     t.string "rateable_type"
     t.integer "rateable_id"
     t.float "overall_avg", null: false
@@ -63,7 +77,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_083712) do
     t.index ["rateable_type", "rateable_id"], name: "index_overall_averages_on_rateable_type_and_rateable_id"
   end
 
-  create_table "rates", force: :cascade do |t|
+  create_table "rates", id: :serial, force: :cascade do |t|
     t.integer "rater_id"
     t.string "rateable_type"
     t.integer "rateable_id"
@@ -76,7 +90,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_083712) do
     t.index ["rater_id"], name: "index_rates_on_rater_id"
   end
 
-  create_table "rating_caches", force: :cascade do |t|
+  create_table "rating_caches", id: :serial, force: :cascade do |t|
     t.string "cacheable_type"
     t.integer "cacheable_id"
     t.float "avg", null: false
@@ -118,4 +132,6 @@ ActiveRecord::Schema.define(version: 2018_10_28_083712) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "bikes", "brakes"
+  add_foreign_key "bikes", "users"
 end
