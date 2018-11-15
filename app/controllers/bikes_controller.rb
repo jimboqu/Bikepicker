@@ -35,6 +35,8 @@ class BikesController < ApplicationController
   def edit
     @frames = Frame.all
     @wheels = Wheel.all
+    @brakes = Brake.all
+    @chainsets = Chainset.all
   end
 
  def update
@@ -64,7 +66,7 @@ class BikesController < ApplicationController
     end
 
     def bike_params
-      params.require(:bike).permit(:name, :description, :user_id, :frame_id, :wheel_id, :chainset_id)
+      params.require(:bike).permit(:name, :description, :user_id, :frame_id, :brake_id, :wheel_id, :chainset_id)
     end
 
 end

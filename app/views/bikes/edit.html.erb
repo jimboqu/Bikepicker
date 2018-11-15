@@ -35,6 +35,36 @@ Bike Builder
 			</tr>
 			<% end %>
 		</table>
+		<h2>Chainsets</h2>
+		<table class="table">
+			<tr>
+				<th>Manufacturer</th>
+				<th>Model</th>
+				<th>Bikes</th>
+			</tr>
+			<% @chainsets.each do |chainset| %>
+			<tr>
+				<td><%= chainset.manufacturer %></td>
+				<td><%= chainset.name %></td>
+				<td><%= chainset.bikes.count %></td>
+			</tr>
+			<% end %>
+		</table>
+		<h2>Brakes</h2>
+		<table class="table">
+			<tr>
+				<th>Manufacturer</th>
+				<th>Model</th>
+				<th>Bikes</th>
+			</tr>
+			<% @brakes.each do |brake| %>
+			<tr>
+				<td><%= brake.manufacturer %></td>
+				<td><%= brake.name %></td>
+				<td><%= brake.bikes.count %></td>
+			</tr>
+			<% end %>
+		</table>
 	</div>
 	<div class="col-md-6">
 		<%= render 'form' %>

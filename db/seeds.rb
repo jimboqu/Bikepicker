@@ -7,6 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Wheel.create!(name: "Black Edition", manufacturer: "Prime", weight: 200, price: "564")
-Chainset.create!(name: "Chain1", manufacturer: "Shimano", weight: 1000, price: "300")
-Frame.create!(name: "Look", manufacturer: "505", weight: 640 , price: "1200")
+Brake.create!(name: "RS505", manufacturer: "Shimnano", weight: 200, price: "230.00")
+
